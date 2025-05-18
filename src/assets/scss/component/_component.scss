@@ -1,0 +1,27 @@
+.btn {
+  padding: $space-sm $space-md;
+  border-radius: $radius-sm;
+  border: none;
+  font-size: $font-sm;
+  transition: 0.3s ease;
+
+  &--primary {
+    background-color: $clr-primary;
+    color: $clr-white;
+
+    &:hover {
+      background-color: darken($clr-primary, 10%);
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 1px solid $clr-primary;
+    color: $clr-primary;
+
+    &:hover {
+      background-color: $clr-primary;
+      color: $clr-white;
+    }
+  }
+}

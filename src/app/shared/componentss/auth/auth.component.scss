@@ -1,0 +1,120 @@
+@import "../../../../assets/scss/main.scss";
+.cardImg img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.form-container {
+  max-width: 400px;
+  width: 100%;
+  .btnS {
+    .btnS1 {
+      background-color: $clr-primary;
+      color: $clr-white;
+      width: 100%;
+      height: 50px;
+    }
+  }
+  .googlebtn {
+    button {
+      width: 100%;
+      height: 50px;
+    }
+    img {
+      display: inline-block;
+    }
+  }
+  .text-center {
+    color: $clr-muted;
+    a {
+      color: $clr-black;
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      width: 50%;
+      background-color: $clr-primary;
+      color: $clr-white;
+    }
+    a {
+      color: $clr-primary;
+    }
+  }
+  .text-start {
+    text-align: sat;
+    a {
+      color: $clr-black;
+    }
+  }
+}
+/* Focus ripple underline */
+::ng-deep .mat-form-field-ripple {
+  background-color: $clr-dark-text !important;
+}
+
+/* Static underline (for 'standard' or 'fill' appearances) */
+::ng-deep .mat-form-field-underline {
+  background-color: $clr-dark-text !important;
+}
+
+/* Label (placeholder) color */
+::ng-deep .mat-form-field-label {
+  color: $clr-muted !important;
+}
+
+/* Label color on focus */
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: $clr-dark-text !important;
+}
+
+/* Actual placeholder inside input */
+::ng-deep input::placeholder {
+  color: $clr-dark-text !important;
+  opacity: 0.6; /* Adjust this if needed */
+}
+
+/* Text caret (blinking cursor) color */
+::ng-deep .mat-input-element {
+  caret-color: $clr-dark-text !important;
+  color: $clr-dark-text; /* Input text color */
+}
+
+/* Selected option text color */
+::ng-deep .mat-select-value {
+  color: $clr-dark-text !important;
+}
+
+/* Dropdown panel selected item */
+::ng-deep .mat-option.mat-selected {
+  color: $clr-dark-text !important;
+  background-color: transparent !important;
+}
+
+/* Remove hover blue background */
+::ng-deep .mat-option:hover {
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.04
+  ) !important; /* optional subtle blackish hover */
+}
+
+/* Remove primary-colored focus ring */
+::ng-deep .mat-select-focused .mat-select-trigger {
+  color: $clr-dark-text !important;
+}
+
+/* Caret icon color */
+::ng-deep .mat-select-arrow {
+  color: $clr-dark-text !important;
+}
+
+/* Remove the primary border (underline ripple) */
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: $clr-dark-text !important;
+}

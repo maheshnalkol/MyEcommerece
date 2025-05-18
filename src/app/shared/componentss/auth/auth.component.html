@@ -1,0 +1,96 @@
+<div class="row vh-100 align-items-center">
+  <!-- Left Side: Image -->
+  <div class="col-md-6 p-0">
+    <div class="cardImg h-100">
+      <img
+        src="../../../../assets/img/cartImg.png"
+        alt="backgroundImg"
+        title="backgroundImg"
+        class="img-fluid h-100 w-100 object-fit-cover"
+      />
+    </div>
+  </div>
+
+  <div class="col-md-6 d-flex align-items-center justify-content-center">
+    <div class="form-container px-4">
+      <h2 class="heading">
+        {{ alreadyHasAccount ? "Log in to Exclusive" : "Create an account" }}
+      </h2>
+      <h6 class="mb-4">Enter your details below</h6>
+      <ng-container *ngIf="!alreadyHasAccount">
+        <form>
+          <mat-form-field class="w-100 mb-1">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput />
+          </mat-form-field>
+          <mat-form-field class="w-100 mb-1">
+            <mat-label>Password</mat-label>
+            <input type="text" matInput />
+          </mat-form-field>
+          <mat-form-field class="w-100 mb-2">
+            <mat-label>User Role</mat-label>
+            <mat-select>
+              <mat-option value="buyer">Buyer</mat-option>
+              <mat-option value="admin">Admin</mat-option>
+              <mat-option value="superAdmin">Super Admin</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div class="btnS">
+            <button class="btnS1 mb-2" mat-raised-button>Create account</button>
+          </div>
+
+          <div class="googlebtn">
+            <button
+              mat-stroked-button
+              type="button"
+              color="Basic"
+              class="w-100"
+            >
+              <img
+                src="https://developers.google.com/identity/images/g-logo.png"
+                alt="Google logo"
+                width="20"
+                height="20"
+                style="margin-right: 8px"
+              />
+              Sign in with Google
+            </button>
+                      
+          </div>
+          <div class="text-center">
+            Already has account?
+            <a
+              href="javascript:;"
+              (click)="alreadyHasAccount = !alreadyHasAccount"
+              >Log in</a
+            >
+          </div>
+        </form>
+      </ng-container>
+      <ng-container *ngIf="alreadyHasAccount">
+        <form>
+          <mat-form-field class="w-100 mb-1">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput />
+          </mat-form-field>
+          <mat-form-field class="w-100 mb-1">
+            <mat-label>Password</mat-label>
+            <input type="text" matInput />
+          </mat-form-field>
+
+          <div class="buttons mb-3">
+            <button class="w-50" mat-raised-button>Log In</button>
+            <a href="javascript:;">Forget password?</a>
+          </div>
+          <div class="text-start">
+            <a
+              (click)="alreadyHasAccount = !alreadyHasAccount"
+              href="javascript:;"
+              >Don't have an account?</a
+            >
+          </div>
+        </form>
+      </ng-container>
+    </div>
+  </div>
+</div>
