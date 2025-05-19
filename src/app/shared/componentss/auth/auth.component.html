@@ -1,4 +1,4 @@
-<div class="row vh-100 align-items-center">
+<div class="row align-items-center">
   <!-- Left Side: Image -->
   <div class="col-md-7 p-0">
     <div class="cardImg h-100">
@@ -18,7 +18,7 @@
       </h2>
       <h6 class="sec-heading mb-4">Enter your details below</h6>
       <ng-container *ngIf="!alreadyHasAccount">
-        <form [formGroup]="signUp" (ngSubmit)="onsubmit()">
+        <form [formGroup]="signUp" (ngSubmit)="onsignUp()">
           <mat-form-field class="w-100 mb-1">
             <mat-label>Email</mat-label>
             <input type="text" formControlName="email" matInput />
@@ -92,7 +92,7 @@
         </form>
       </ng-container>
       <ng-container *ngIf="alreadyHasAccount">
-        <form [formGroup]="logIn">
+        <form [formGroup]="logIn" (ngSubmit)="onLogin()">
           <mat-form-field class="w-100 mb-1">
             <mat-label>Email</mat-label>
             <input formControlName="email" type="text" matInput />

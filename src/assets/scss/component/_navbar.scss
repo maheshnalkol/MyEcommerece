@@ -87,3 +87,12 @@
     }
   }
 }
+.navbar_header {
+  background-color: $clr-black;
+  text-align: center;
+  color: $clr-white;
+  padding: 1rem;
+  a {
+    color: $clr-white;
+  }
+}

@@ -11,6 +11,9 @@ import { ContactComponent } from './shared/componentss/contact/contact.component
 import { AboutComponent } from './shared/componentss/about/about.component';
 import { HomeComponent } from './shared/componentss/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarHeaderComponent } from './shared/componentss/navbar-header/navbar-header.component';
+import { FooterComponent } from './shared/componentss/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContactComponent,
     AboutComponent,
     HomeComponent,
+    NavbarHeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
