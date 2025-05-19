@@ -1,39 +1,63 @@
 <div class="row vh-100 align-items-center">
   <!-- Left Side: Image -->
-  <div class="col-md-6 p-0">
+  <div class="col-md-7 p-0">
     <div class="cardImg h-100">
       <img
         src="../../../../assets/img/cartImg.png"
         alt="backgroundImg"
         title="backgroundImg"
-        class="img-fluid h-100 w-100 object-fit-cover"
+        class="img-fluid"
       />
     </div>
   </div>
 
-  <div class="col-md-6 d-flex align-items-center justify-content-center">
+  <div class="col-md-5 d-flex align-items-center justify-content-center">
     <div class="form-container px-4">
-      <h2 class="heading">
+      <h2 class="Pri-heading mb-4">
         {{ alreadyHasAccount ? "Log in to Exclusive" : "Create an account" }}
       </h2>
-      <h6 class="mb-4">Enter your details below</h6>
+      <h6 class="sec-heading mb-4">Enter your details below</h6>
       <ng-container *ngIf="!alreadyHasAccount">
-        <form>
+        <form [formGroup]="signUp" (ngSubmit)="onsubmit()">
           <mat-form-field class="w-100 mb-1">
             <mat-label>Email</mat-label>
-            <input type="text" matInput />
+            <input type="text" formControlName="email" matInput />
+            <mat-error
+              *ngIf="
+                signUp.controls['email'].hasError('required') &&
+                signUp.controls['email'].touched
+              "
+            >
+              Email is required field...!!!
+            </mat-error>
           </mat-form-field>
           <mat-form-field class="w-100 mb-1">
             <mat-label>Password</mat-label>
-            <input type="text" matInput />
+            <input type="text" formControlName="password" matInput />
+            <mat-error
+              *ngIf="
+                signUp.controls['password'].hasError('required') &&
+                signUp.controls['password'].touched
+              "
+            >
+              Password is required...!!!
+            </mat-error>
           </mat-form-field>
           <mat-form-field class="w-100 mb-2">
             <mat-label>User Role</mat-label>
-            <mat-select>
+            <mat-select formControlName="userRole">
               <mat-option value="buyer">Buyer</mat-option>
               <mat-option value="admin">Admin</mat-option>
               <mat-option value="superAdmin">Super Admin</mat-option>
             </mat-select>
+            <mat-error
+              *ngIf="
+                signUp.controls['userRole'].hasError('required') &&
+                signUp.controls['userRole'].touched
+              "
+            >
+              User Role must be selected...!!!
+            </mat-error>
           </mat-form-field>
           <div class="btnS">
             <button class="btnS1 mb-2" mat-raised-button>Create account</button>
@@ -68,14 +92,30 @@
         </form>
       </ng-container>
       <ng-container *ngIf="alreadyHasAccount">
-        <form>
+        <form [formGroup]="logIn">
           <mat-form-field class="w-100 mb-1">
             <mat-label>Email</mat-label>
-            <input type="text" matInput />
+            <input formControlName="email" type="text" matInput />
+            <mat-error
+              *ngIf="
+                logIn.controls['email'].hasError('required') &&
+                logIn.controls['email'].touched
+              "
+            >
+              Email is required field...!!!
+            </mat-error>
           </mat-form-field>
           <mat-form-field class="w-100 mb-1">
             <mat-label>Password</mat-label>
-            <input type="text" matInput />
+            <input formControlName="password" type="text" matInput />
+            <mat-error
+              *ngIf="
+                logIn.controls['password'].hasError('required') &&
+                logIn.controls['password'].touched
+              "
+            >
+              Password is required field...!!!
+            </mat-error>
           </mat-form-field>
 
           <div class="buttons mb-3">

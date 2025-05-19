@@ -1,0 +1,89 @@
+.navbar {
+  padding: 1rem 2rem;
+  background-color: $clr-white;
+  border-bottom: 1px solid $clr-border;
+
+  .navbar_bg {
+    background-color: $clr-light-bg;
+  }
+  .navbar-brand {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $clr-dark-text;
+    margin-right: 2rem;
+    text-decoration: none;
+  }
+
+  // Toggler Button
+  .navbar-toggler {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: $clr-dark-text;
+    cursor: pointer;
+
+    .navbar-toggler-icon {
+      display: inline-block;
+      font-size: 1.5rem;
+      line-height: 1;
+      content: "";
+    }
+  }
+
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .nav-item {
+      .nav-link {
+        font-size: 0.875rem;
+        color: $clr-dark-text;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+        padding: 0.5rem 0;
+
+        &.active,
+        &:hover {
+          color: $clr-dark-text;
+          text-decoration: underline;
+          text-underline-offset: 4px;
+        }
+      }
+    }
+  }
+
+  .nav_search {
+    width: 250px;
+    height: 50px;
+    background-color: $clr-light-bg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    // border: 1px solid $clr-border;
+    input {
+      width: 200px;
+      background-color: transparent;
+    }
+  }
+
+  // Search Form Styling
+  .form-inline {
+    // width: 50%;
+    display: flex;
+    align-items: center;
+    background-color: $clr-light-bg;
+    // padding: 0.25rem 0.75rem;
+    padding: 1rem;
+    border-radius: 4px;
+    ::placeholder {
+      width: 100%;
+      background-color: $clr-light-bg;
+    }
+    &:hover {
+      background-color: $clr-light-bg;
+    }
+  }
+}

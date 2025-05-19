@@ -10,14 +10,23 @@ import { NavbarComponent } from './shared/componentss/navbar/navbar.component';
 import { ContactComponent } from './shared/componentss/contact/contact.component';
 import { AboutComponent } from './shared/componentss/about/about.component';
 import { HomeComponent } from './shared/componentss/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, NavbarComponent, ContactComponent, AboutComponent, HomeComponent],
+  declarations: [
+    AppComponent,
+    AuthComponent,
+    NavbarComponent,
+    ContactComponent,
+    AboutComponent,
+    HomeComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

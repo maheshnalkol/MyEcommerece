@@ -1,11 +1,17 @@
 body {
   font-family: $font-family-base;
-  font-size: $font-md;
+  font-size: 1rem;
   color: $clr-dark-text;
   line-height: 1.6;
 }
 
-.heading {
+.Pri-heading {
   font-weight: bold;
   color: $clr-black;
+}
+.sec-heading {
+  font-size: 16px;
+  font-weight: 500;
+  color: $clr-black;
+  
 }
