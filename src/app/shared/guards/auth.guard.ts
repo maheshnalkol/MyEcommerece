@@ -23,6 +23,7 @@ export class AuthGuard implements CanActivate {
     | boolean
     | UrlTree {
     if (this._authService.getToken()) {
+      this._authService.passTokenstate.next(true);
       return true;
     } else {
       alert('plzz log in first');

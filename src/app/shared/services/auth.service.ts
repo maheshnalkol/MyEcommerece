@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Observer, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -9,8 +9,11 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   AUTH_URL = `${environment.authurl}/api/auth`;
 
+  private checkToken$: Subject<any> = new Subject();
+  checkTokenstate: Observable<any> = this.checkToken$;
+  passTokenstate: Observer<any> = this.checkToken$;
   constructor(private _http: HttpClient) {}
-  
+
   signUpUSer(userDetails: any): Observable<any> {
     return this._http.post<any>(`${this.AUTH_URL}/register`, userDetails);
   }

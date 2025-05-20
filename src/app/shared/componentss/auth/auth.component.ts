@@ -18,6 +18,7 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
     this.signUpFormCreate();
     this.logInFormCreate();
+    this._authService.passTokenstate.next(false);
   }
   signUpFormCreate() {
     this.signUp = new FormGroup({

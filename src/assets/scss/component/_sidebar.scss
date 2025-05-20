@@ -3,7 +3,8 @@
   background-color: $clr-white;
   padding: 20px;
   border-right: 1px solid $clr-light-bg;
-
+  scroll-behavior: smooth;
+  scroll-snap-type: none;
   .categories {
     list-style: none;
     padding: 0;
