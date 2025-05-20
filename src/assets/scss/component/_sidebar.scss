@@ -1,0 +1,35 @@
+.sidebar {
+  width: 260px;
+  background-color: $clr-white;
+  padding: 20px;
+  border-right: 1px solid $clr-light-bg;
+
+  .categories {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 12px 10px;
+      font-size: 16px;
+      font-weight: 500;
+      color: $clr-dark-text;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: $clr-light-bg;
+        border-radius: 6px;
+      }
+
+      .arrow {
+        font-size: 16px;
+        font-weight: bold;
+        color: $clr-black;
+      }
+    }
+  }
+}
