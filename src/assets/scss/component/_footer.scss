@@ -40,10 +40,13 @@
   }
   .download {
     img {
-      width: 70px;
-      height: 70px;
+      width: 90px;
+      height: 90px;
       object-fit: cover;
     }
+  }
+  .qr_button {
+    height: 200px;
   }
   .btn-link-icon {
     position: relative;
@@ -55,6 +58,16 @@
         width: 100%;
         height: 30px;
         object-fit: cover;
+      }
+    }
+  }
+  .brand-icons {
+    margin-top: 5px;
+    li {
+      display: inline-block;
+      margin: 7px;
+      a {
+        font-size: 20px;
       }
     }
   }

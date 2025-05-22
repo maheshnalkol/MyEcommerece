@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-3 mb-2" *ngFor="let prod of products">
+    <div class="customcard h-100">
+      <div
+        class="imgContainer"
+        (mouseenter)="hoveredProduct = prod"
+        (mouseleave)="hoveredProduct = null"
+      >
+        <img class="base-img" [src]="prod.images[0]" [alt]="prod.title" />
+        <img
+          class="hover-img"
+          [class.visible]="hoveredProduct === prod"
+          [src]="prod.images[1]"
+          [alt]="prod.title + ' alternate'"
+        />
+      </div>
+
+      <mat-divider class="mb-2"></mat-divider>
+      <div class="info">
+        <p>{{ prod.category }}</p>
+        <p class="title">{{ prod.title }}</p>
+        <p>{{ prod.total_price }}</p>
+      </div>
+      <div class="hovered">
+        <ul>
+          <li (click)="onaddCart($event)">
+            <span class="icon"><mat-icon>shopping_bag</mat-icon></span>
+          </li>
+          <li (click)="onaddlike($event, prod._id)">
+            <span
+              [ngClass]="{
+                isliked: isInwhishlist[prod._id]
+              }"
+              class="icon"
+              ><mat-icon>favorite</mat-icon></span
+            >
+          </li>
+          <li (click)="onaddVisibility($event)">
+            <span class="icon"><mat-icon>visibility</mat-icon></span>
+          </li>
+          <li (click)="onshuffle($event)">
+            <span class="icon"><mat-icon>shuffle</mat-icon></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

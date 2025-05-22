@@ -1,1 +1,33 @@
-<p>home works!</p>
+<div class="mainsection">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar">
+        <ul class="categories">
+          <li *ngFor="let categories of arrayOfcategory">
+            {{ categories }}
+            <mat-icon class="arrow">arrow_forward_ios</mat-icon>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9 p-3">
+      <app-carousel [getImages]="imagesArr"></app-carousel>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-countdown [prodARR]="prodArr"></app-countdown>
+    </div>
+  </div>
+  <mat-divider class="divider mb-2"></mat-divider>
+  <div class="row">
+    <div class="col-12">
+      <app-browsecategory></app-browsecategory>
+    </div>
+  </div>
+  <!-- <div class="row"> 
+    <div class="col-md-3 mb-2" *ngFor="let prod of prodArr">
+      <app-card [prodObj]="prod"></app-card>
+    </div>
+  </div> -->
+</div>

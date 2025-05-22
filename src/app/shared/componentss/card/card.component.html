@@ -1,0 +1,32 @@
+<!-- <div class="mainCard">
+  <div class="imgContainer">
+    <img [src]="prodObj.images[2]" alt="" />
+  </div>
+  <div class="Info">
+    <h5 class="prodTitle">{{ prodObj.title }}</h5>
+    <p class="totalprice">{{ prodObj.total_price }}</p>
+    <p class="rating"><app-rating [getRating]="prodObj.rating"></app-rating></p>
+  </div>
+</div> -->
+<div class="customcard h-100">
+  <div
+    class="imgContainer"
+    (mouseenter)="hoveredProduct = prodObj"
+    (mouseleave)="hoveredProduct = null"
+  >
+    <img class="base-img" [src]="prodObj.images[0]" [alt]="prodObj.title" />
+    <img
+      class="hover-img"
+      [class.visible]="hoveredProduct === prodObj"
+      [src]="prodObj.images[1]"
+      [alt]="prodObj.title + ' alternate'"
+    />
+  </div>
+
+  <mat-divider class="mb-2"></mat-divider>
+  <div class="info">
+    <p class="title mb-0">{{ prodObj.title }}</p>
+    <p class="mb-1">{{ prodObj.total_price }}</p>
+    <p><app-rating></app-rating></p>
+  </div>
+</div>

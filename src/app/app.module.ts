@@ -14,7 +14,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarHeaderComponent } from './shared/componentss/navbar-header/navbar-header.component';
 import { FooterComponent } from './shared/componentss/footer/footer.component';
-import { SiderbarComponent } from './shared/componentss/siderbar/siderbar.component';
+import { CarouselComponent } from './shared/componentss/carousel/carousel.component';
+import { CountdownComponent } from './shared/componentss/countdown/countdown.component';
+import { CardComponent } from './shared/componentss/card/card.component';
+import { RatingComponent } from './shared/componentss/rating/rating.component';
+import { AllProductsComponent } from './shared/componentss/all-products/all-products.component';
+import { BrowsecategoryComponent } from './shared/componentss/browsecategory/browsecategory.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { SiderbarComponent } from './shared/componentss/siderbar/siderbar.compon
     HomeComponent,
     NavbarHeaderComponent,
     FooterComponent,
-    SiderbarComponent,
+    CarouselComponent,
+    CountdownComponent,
+    CardComponent,
+    RatingComponent,
+    AllProductsComponent,
+    BrowsecategoryComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+<div class="stars">
+  <div class="empty-stars">
+    <mat-icon>star</mat-icon><mat-icon>star</mat-icon><mat-icon>star</mat-icon
+    ><mat-icon>star</mat-icon><mat-icon>star</mat-icon>
+  </div>
+  <div
+    class="filled-stars"
+    [ngStyle]="{
+      width: rating * 20 + '%'
+    }"
+  >
+    <mat-icon>star</mat-icon><mat-icon>star</mat-icon><mat-icon>star</mat-icon
+    ><mat-icon>star</mat-icon><mat-icon>star</mat-icon>
+  </div>
+  <!-- 3.7 * 20 = 74% -->
+</div>

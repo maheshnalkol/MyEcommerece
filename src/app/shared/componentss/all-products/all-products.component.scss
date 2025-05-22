@@ -1,0 +1,151 @@
+:root {
+  --fresh-orange: #ff6b00;
+  --sky-blue: #00bfff;
+  --light-bg: #f9f9f9;
+  --text-dark: #333;
+}
+
+.customcard {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  border: 1px solid #c9c9c9;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease-in-out, transform 0.3s ease;
+    background-color: white;
+  }
+
+  .base-img {
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .hover-img {
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1);
+  }
+
+  &:hover {
+    .base-img {
+      opacity: 0;
+    }
+
+    .hover-img {
+      opacity: 1;
+      transform: scale(1.05); // Optional zoom-in effect
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+  //   align-items: flex-end;
+  // height: 200px;
+  .title {
+    text-overflow: ellipsis;
+    height: 20px;
+    overflow: hidden;
+
+    // max-lines: 1;
+  }
+  .title:hover {
+    color: rgb(0, 136, 255);
+  }
+}
+
+.imghover {
+  transition: all 0.3s ease-in;
+}
+
+.hovered {
+  position: absolute;
+  top: 30px;
+  right: -50px;
+  // display: none;
+    z-index: 10;
+  transition: all 0.5s linear;
+  ul {
+    list-style: none;
+    margin: 0;
+    li {
+      margin-bottom: 5px;
+      .icon {
+        background-color: #ff6a00bb;
+        padding: 5px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+      .isliked {
+        color: red;
+      }
+    }
+  }
+}
+.customcard:hover {
+  border: 1px solid #ff6b00;
+  .hovered {
+    right: 5px;
+    // display: block;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  z-index: 999; /* Ensure it's above other content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup Card Styles */
+.popup-card {
+  position: relative;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 500px;
+  transition: transform 0.3s ease-in-out;
+
+  /* Optional: Add some margin or spacing inside the popup card */
+  .row {
+    display: flex;
+    gap: 20px;
+  }
+}

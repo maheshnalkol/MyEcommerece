@@ -1,0 +1,37 @@
+<div class="row align-items-center py-4">
+  <div class="col-md-3">
+    <div class="flashsale"><span class="orangeIcon"></span> Today's</div>
+    <h2>Flash Sales</h2>
+  </div>
+
+  <div class="col-md-5">
+    <div *ngIf="timeLeft > 0" class="flash-sale-timer">
+      <div class="timer">
+        <span>{{ days }}d</span>
+        <span>{{ hours }}h</span>
+        <span>{{ minutes }}m</span>
+        <span>{{ seconds }}s</span>
+      </div>
+    </div>
+    <div *ngIf="timeLeft <= 0" class="flash-sale-ended">
+      <h3>⏰ Flash Sale Ended!</h3>
+    </div>
+  </div>
+
+  <div class="col-md-4 text-end">
+    <button (click)="prev()"><span>&larr;</span></button>
+    <button (click)="next()"><span>&rarr;</span></button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3 mb-2" *ngFor="let prod of visibleProducts">
+    <app-card [prodObj]="prod"></app-card>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-12 text-center">
+    <button routerLink="/products" mat-raised-button color="warn">
+      View All Products
+    </button>
+  </div>
+</div>
